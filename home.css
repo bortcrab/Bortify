@@ -1,0 +1,200 @@
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--dark-primary) var(--dark-background);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--dark-background);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--dark-primary);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    background-clip: padding-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-primary);
+    height: 70px;
+    padding: 0rem 1rem;
+    color: var(--dark-dark-text);
+    position: sticky;
+    top: 0;
+}
+
+header>* {
+    margin: 0.3rem;
+}
+
+header h2 {
+    font-family: 'Gasoek One';
+    font-weight: 100;
+    font-style: normal;
+    font-size: 2.5rem;
+}
+
+header img {
+    width: 40px;
+    cursor: pointer;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search input {
+    all: unset;
+    height: 40px;
+    font-size: 1.5rem;
+    color: var(--dark-dark-text);
+}
+
+::placeholder {
+    color: var(--dark-dark-text);
+}
+
+.bottom-border {
+    width: 20rem;
+    height: 0.3rem;
+    border-radius: 1rem;
+    background-color: var(--dark-background);
+}
+
+header a {
+    all: unset;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
+header a:hover {
+    color: var(--dark-accent);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 100;
+}
+
+.playlist-container {
+    max-width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.playlist-card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.playlist-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 2px 2px var(--dark-accent);
+}
+
+.playlist-image {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.playlist-image img {
+    width: 250px;
+}
+
+.playlist-title {
+    background-color: var(--dark-secondary);
+    text-align: center;
+    overflow: hidden;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 0.7rem);
+    min-height: 100px;
+    max-height: 100px;
+    position: sticky;
+    bottom: 0;
+    padding-left: 0.7rem;
+    background-color: var(--dark-primary);
+}
+
+.song-data {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    max-width: 400px;
+    gap: 0.6rem;
+}
+
+.song-data span {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.song-data img {
+    width: 80px;
+}
+
+.playing-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.playing-info img {
+    width: 50px;
+}
+
+.progression {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    max-height: fit-content;
+}
+
+footer p {
+    margin: 0;
+}
+
+.progress-bar {
+    width: 30rem;
+    height: 0.4rem;
+    cursor: pointer;
+}

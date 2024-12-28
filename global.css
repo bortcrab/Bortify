@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Gasoek+One&display=swap');
+
+:root {
+    --dark-primary: #5d54b6;
+    --dark-secondary: #38715c;
+    --dark-accent: #adaacf;
+    --dark-background: #0a0a0f;
+    --dark-clear-text: #ebeaf0;
+    --dark-dark-text: #0a0a0f;
+}
+
+html,
+body {
+    height: 100vh;
+    margin: 0px;
+    background-color: var(--dark-background);
+    font-family: 'Gabarito';
+    color: var(--dark-clear-text);
+}

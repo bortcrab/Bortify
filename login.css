@@ -1,0 +1,44 @@
+:root {
+    --gradient: linear-gradient(45deg, #264b3e, #0e1b17, #070e0c, var(--dark-background), #0e0d13, #1d1b29, #4a4480);
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: var(--gradient);
+    background-size: 400% 400%;
+    /* Ajusta el tamaño del gradiente para que la animación sea más visible */
+    animation: bg-animation 15s infinite;
+}
+
+@keyframes bg-animation {
+    0% {background-position: left;}
+    50% {background-position: right;}
+    100% {background-position: left;}
+}
+
+h1 {
+    font-size: 6rem;
+    font-family: "Gasoek One", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--dark-primary);
+}
+
+button {
+    all: unset;
+    background-color: var(--dark-secondary);
+    padding: 0.8rem 3rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 7px 7px var(--dark-accent);
+}
