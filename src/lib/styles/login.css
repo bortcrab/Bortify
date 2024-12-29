@@ -10,7 +10,6 @@ main {
     align-items: center;
     background-image: var(--gradient);
     background-size: 400% 400%;
-    /* Ajusta el tamaño del gradiente para que la animación sea más visible */
     animation: bg-animation 15s infinite;
 }
 
