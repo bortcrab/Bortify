@@ -1,10 +1,15 @@
+import { redirect } from '@sveltejs/kit';
+
 export async function load({ cookies }) {
+    // Tries to obtain the access token from the cookies
     const accessToken = cookies.get('access_token');
 
     if (!accessToken) {
-        return { loggedIn: false };
+        // If not token is found, redirect to the login
+        throw redirect(303, '/login');
     }
 
+    // Otherwise, continue
     try {
         // Get user info
         const userResponse = await fetch('https://api.spotify.com/v1/me', {
@@ -14,7 +19,7 @@ export async function load({ cookies }) {
         });
 
         if (!userResponse.ok) {
-            return { loggedIn: false };
+            throw redirect(303, '/login');
         }
 
         const user = await userResponse.json();

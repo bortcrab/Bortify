@@ -7,7 +7,7 @@
     let authUrl = "";
 
     onMount(async () => {
-        const res = await fetch("/api/auth");
+        const res = await fetch("/api/auth/login");
         const data = await res.json();
         authUrl = data.auth_url;
     });
