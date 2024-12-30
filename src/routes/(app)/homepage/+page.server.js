@@ -32,17 +32,16 @@ export async function load({ cookies }) {
         });
 
         if (!playlistsResponse.ok) {
-            return { loggedIn: true, user, playlists: [] };
+            return {user, playlists: [] };
         }
 
         const playlistsData = await playlistsResponse.json();
 
         return {
-            loggedIn: true,
             user,
             playlists: playlistsData.items
         };
     } catch (error) {
-        return { loggedIn: false };
+        throw redirect(303, '/login');
     }
 }

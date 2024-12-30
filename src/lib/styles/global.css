@@ -9,6 +9,26 @@
     --dark-dark-text: #0a0a0f;
 }
 
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--dark-primary) var(--dark-background);
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--dark-background);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--dark-primary);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    background-clip: padding-box;
+}
+
 html,
 body {
     height: 100vh;
