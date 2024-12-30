@@ -2,6 +2,16 @@
     import "../../lib/styles/global.css";
     import "../../lib/styles/header.css";
     import "../../lib/styles/footer.css";
+
+    async function handleLogout() {
+        try {
+            await fetch('/api/auth/logout', { method: 'POST' });
+
+            window.location.href = '/login';
+        } catch (error) {
+            console.error('There was an error trying to log out:', error);
+        }
+    }
 </script>
 
 <header>
@@ -13,7 +23,7 @@
         </div>
         <img src="images/magnifying_glass.png" alt="Magnifying glass" />
     </div>
-    <a href="/login">Log out</a>
+    <button on:click={handleLogout}>Log out</button>
 </header>
 
 <slot />

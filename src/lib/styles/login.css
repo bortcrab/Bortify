@@ -1,5 +1,5 @@
 :root {
-    --gradient: linear-gradient(45deg, #264b3e, #0e1b17, #070e0c, var(--dark-background), #0e0d13, #1d1b29, #4a4480);
+    --gradient: linear-gradient(45deg, var(--dark-secondary), #264b3e, #0e1b17, #070e0c, var(--dark-background), #0e0d13, #1d1b29, #4a4480, var(--dark-primary));
 }
 
 main {

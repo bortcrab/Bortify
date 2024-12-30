@@ -7,7 +7,7 @@ export async function GET() {
 
     // Generates auth URL
     const auth_url = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=code&redirect_uri=${encodeURIComponent(redirect_uri)}&scope=${encodeURIComponent(scope)}`;
-
+    
     // Returns auth URL to the frontend
     return json({ auth_url });
 }
