@@ -42,7 +42,7 @@
         // Get the scroll container, its scroll position and height
         const container = event.target;
         const scrollPosition = container.scrollTop + container.clientHeight;
-        const scrollHeight = scrollContainer.scrollHeight;
+        const scrollHeight = container.scrollHeight;
 
         // Load more songs if the user has scrolled to the bottom 85% of the container
         if (scrollPosition >= scrollHeight * 0.85) {

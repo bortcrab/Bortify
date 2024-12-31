@@ -3,6 +3,7 @@ import { json } from '@sveltejs/kit';
 export async function GET() {
     const client_id = import.meta.env.VITE_CLIENT_ID;
     const redirect_uri = 'http://localhost:5173/callback';
+    //const redirect_uri = 'https://solid-space-robot-45vqjpjqv5cjwxr-5173.app.github.dev/callback';
     const scope = 'user-read-private playlist-read-private';
 
     // Generates auth URL
