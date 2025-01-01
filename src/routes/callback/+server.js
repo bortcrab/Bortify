@@ -8,8 +8,8 @@ export async function GET({ url, cookies }) {
 
     const client_id = import.meta.env.VITE_CLIENT_ID;
     const client_secret = import.meta.env.VITE_CLIENT_SECRET;
-    const redirect_uri = 'http://localhost:5173/callback';
-    //const redirect_uri = 'https://solid-space-robot-45vqjpjqv5cjwxr-5173.app.github.dev/callback';
+    //const redirect_uri = 'http://localhost:5173/callback';
+    const redirect_uri = 'https://humble-space-meme-x4jjq9j6qqrfv54q-5173.app.github.dev/callback';
     const token_url = 'https://accounts.spotify.com/api/token';
 
     const response = await fetch(token_url, {
