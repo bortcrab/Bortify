@@ -18,31 +18,27 @@
     }
 
     function handleSearch() {
-        const searchQuery = document.getElementById("search").value;
+        const searchQuery = document.getElementById("search-bar").value;
+        if (searchQuery === "") {
+            return;
+        }
         const currentUrl = window.location.href;
         const newUrl = `/searchResult/${searchQuery}`;
 
-        console.log(currentUrl);
-
-        // Verificar si ya estamos en la misma página
-        if (currentUrl.includes("/searchResult/")) {
-            goto(newUrl);
-        } else {
-            goto(newUrl);
-        }
+        window.location.href = newUrl;
     }
 </script>
 
 <header>
     <button class="logo" on:click={handleGoHome}>Bortify</button>
-    <div class="search">
+    <form class="search" on:submit|preventDefault={handleSearch}>
         <div class="search-input">
-            <input type="text" name="search" id="search" placeholder="Search" />
+            <input type="text" name="search-bar" id="search-bar" placeholder="Search" />
             <div class="bottom-border"></div>
         </div>
-        <button on:click={handleSearch}>
+        <button type="submit">
             <img src="/images/magnifying_glass.png" alt="Magnifying glass" />
         </button>
-    </div>
+    </form>
     <button class="logout" on:click={handleLogout}>Log out</button>
 </header>
