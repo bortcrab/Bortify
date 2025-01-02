@@ -31,10 +31,6 @@ main {
     font-size: 2.2rem;
 }
 
-.playlist-data h1,
-.playlist-data h3,
-.play-and-quantity p,
-button h2,
 .song-info p {
     margin: 0;
 }
