@@ -14,7 +14,7 @@ export async function load({ cookies, params }) {
     // Otherwise, continue
     try {
         // Get playlist's songs
-        const results = await fetch(`https://api.spotify.com/v1/search?q=${params.searchQuery}&type=track`, {
+        const results = await fetch(`https://api.spotify.com/v1/search?q=${params.searchQuery}&type=track&limit=50`, {
             headers: {
                 Authorization: `Bearer ${accessToken}`
             }

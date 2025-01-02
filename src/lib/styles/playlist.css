@@ -32,7 +32,6 @@ main {
     color: var(--dark-dark-text);
     max-height: 400px;
     border-radius: 1rem 1rem 0 0;
-    position: relative;
 }
 
 .playlist-data h1 {
@@ -42,12 +41,11 @@ main {
 }
 
 .playlist-data h1,
-.playlist-data h3 {
+.playlist-data h3,
+.play-and-quantity p,
+button h2,
+.song-info p {
     margin: 0;
-}
-
-.playlist-data .image-container {
-    position: relative;
 }
 
 .playlist-data img {
@@ -56,24 +54,27 @@ main {
     object-fit: cover;
 }
 
-.overlay-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    padding: 1rem;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 1;
-    background-color: rgba(31, 31, 31, 0.8);
+.play-and-quantity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem 1rem 1rem;
+    color: var(--dark-dark-text);
+    background-color: var(--dark-accent);
 }
 
-.overlay-button:hover {
-    filter: invert(1);
+.play-playlist {
+    border-radius: 2rem;
+    background-color: var(--dark-secondary);
+    padding: 1rem;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.play-playlist:hover {
+    background-color: var(--dark-primary);
+    color: var(--dark-clear-text);
 }
 
 .song-list {
@@ -107,10 +108,6 @@ main {
     gap: 0.2rem;
 }
 
-.song-info p {
-    margin: 0;
-}
-
 b {
     font-size: 1.25rem;
 }
@@ -127,6 +124,8 @@ i {
     width: 150px;
     height: 150px;
     background-color: var(--dark-accent);
+    position: relative;
+    cursor: pointer;
 }
 
 .song-image-container img {
@@ -137,4 +136,24 @@ i {
 
 .song-no-image-container img {
     width: 80px;
+}
+
+.play-song {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    color: var(--dark-clear-text);
+    background-color: rgb(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.song-image-container:hover .play-song,
+.song-no-image-container:hover .play-song {
+    opacity: 1;
 }

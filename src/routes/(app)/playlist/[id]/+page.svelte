@@ -66,17 +66,22 @@
                 <div class="image-container">
                     <img
                         src={playlist.images[0].url}
-                        alt={playlist.name}
-                        cover
+                        alt={playlist.name} cover
                     />
-                    <button class="overlay-button" aria-label="Play"
-                        ><i class="fa-solid fa-play"></i></button
-                    >
                 </div>
                 <div class="playlist-info">
                     <h1>{playlist.name}</h1>
                     <h3>{playlist.description}</h3>
                 </div>
+            </div>
+            <div class="play-and-quantity">
+                <button class="play-playlist">
+                    <h2>
+                        Play
+                        <i class="fa-solid fa-play"></i>
+                    </h2>
+                </button>
+                <h3>Total tracks: <u>{playlist.tracks.total}</u></h3>
             </div>
             <div class="song-list">
                 {#each songs as song}
@@ -88,6 +93,9 @@
                                     alt={song.track.name}
                                     artwork
                                 />
+                                <div class="play-song">
+                                    <i class="fa-solid fa-play fa-2x"></i>
+                                </div>
                             </div>
                         {:else}
                             <div class="song-no-image-container">
@@ -95,6 +103,9 @@
                                     src="/images/music_note.png"
                                     alt="Music note"
                                 />
+                                <div class="play-song">
+                                    <i class="fa-solid fa-play fa-2x"></i>
+                                </div>
                             </div>
                         {/if}
                         <div class="song-info">
