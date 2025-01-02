@@ -7,6 +7,7 @@
     let authUrl = "";
 
     onMount(async () => {
+        localStorage.setItem("currentSearchQuery", "");
         const response = await fetch("/api/auth/login");
         const data = await response.json();
         authUrl = data.auth_url;
