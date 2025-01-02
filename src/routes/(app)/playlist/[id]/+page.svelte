@@ -112,11 +112,9 @@
                             <p><b>{song.track.name}</b></p>
                             <p><i>{song.track.album.name}</i></p>
                             <p>
-                                <u
-                                    >{song.track.artists
-                                        .map((artist) => artist.name)
-                                        .join(", ")}</u
-                                >
+                                <u>
+                                    {song.track.artists.map((artist) => artist.name).join(", ")}
+                                </u>
                             </p>
                         </div>
                     </div>

@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.container {
+    width: 80%;
+    margin: 1rem 0rem;
+    border-radius: 1rem;
+    background-color: var(--dark-accent);
+}
+
+.container h2 {
+    text-align: center;
+}
+
+.results-info h1 {
+    color: var(--dark-dark-text);
+    text-align: center;
+    font-family: 'Gasoek One';
+    font-weight: lighter;
+    font-size: 2.2rem;
+}
+
+.playlist-data h1,
+.playlist-data h3,
+.play-and-quantity p,
+button h2,
+.song-info p {
+    margin: 0;
+}
+
+.song-list {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-accent);
+    color: var(--dark-dark-text);
+    border-radius: 0 0 1rem 1rem;
+    overflow: hidden;
+}
+
+.song-list .song-item:nth-child(odd) {
+    background-color: var(--dark-primary);
+}
+
+.song-list .song-item:nth-child(even) {
+    background-color: var(--dark-secondary);
+}
+
+.song-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+b {
+    font-size: 1.25rem;
+}
+
+i:not(#pastSearch) {
+    font-size: 1.1rem;
+}
+
+.song-image-container,
+.song-no-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-color: var(--dark-accent);
+    position: relative;
+    cursor: pointer;
+}
+
+.song-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.song-no-image-container img {
+    width: 80px;
+}
+
+.play-song {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    color: var(--dark-clear-text);
+    background-color: rgb(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.song-image-container:hover .play-song,
+.song-no-image-container:hover .play-song {
+    opacity: 1;
+}

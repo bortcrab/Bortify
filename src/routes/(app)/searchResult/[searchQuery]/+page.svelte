@@ -1,10 +1,10 @@
 <script>
-    import "../../../../lib/styles/playlist.css";
+    import "../../../../lib/styles/searchResult.css";
 
     export let data;
     let songs = data.songs.tracks.items || [];
+    let pastSearch = data.pastSearch;
 
-    console.log(songs);
     //let loading = false;
     //let nextUrl = songs.tracks.next;
 
@@ -60,11 +60,10 @@
 <main>
     <div class="container">
         {#if songs.length === 0}
-            <p>{songs.length}</p>
             <h2>No songs were found (. _ . )</h2>
         {:else}
-            <div class="playlist-info">
-                <h1>Search results: <!--{playlist.description}--></h1>
+            <div class="results-info">
+                <h1>Search results for <i id="pastSearch"><u>{pastSearch}</u></i></h1>
             </div>
             <div class="song-list">
                 {#each songs as song}
@@ -76,6 +75,9 @@
                                     alt={song.name}
                                     artwork
                                 />
+                                <div class="play-song">
+                                    <i class="fa-solid fa-play fa-2x"></i>
+                                </div>
                             </div>
                         {:else}
                             <div class="song-no-image-container">
@@ -83,17 +85,18 @@
                                     src="/images/music_note.png"
                                     alt="Music note"
                                 />
+                                <div class="play-song">
+                                    <i class="fa-solid fa-play fa-2x"></i>
+                                </div>
                             </div>
                         {/if}
                         <div class="song-info">
                             <p><b>{song.name}</b></p>
                             <p><i>{song.album.name}</i></p>
                             <p>
-                                <u
-                                    >{song.artists
-                                        .map((artist) => artist.name)
-                                        .join(", ")}</u
-                                >
+                                <u>
+                                    {song.artists.map((artist) => artist.name).join(", ")}
+                                </u>
                             </p>
                         </div>
                     </div>

@@ -4,8 +4,6 @@ export async function load({ cookies, params }) {
     // Tries to obtain the access token from the cookies
     const accessToken = cookies.get('access_token');
 
-    console.log(params.searchQuery);
-
     if (!accessToken) {
         // If not token is found, redirect to the login
         throw redirect(303, '/login');
@@ -23,7 +21,8 @@ export async function load({ cookies, params }) {
         const resultsData = await results.json();
 
         return {
-            songs: resultsData
+            songs: resultsData,
+            pastSearch: params.searchQuery
         };
     } catch (error) {
         throw redirect(303, '/homepage');

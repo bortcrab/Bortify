@@ -1,8 +1,17 @@
 <script>
+    import { onMount } from "svelte";
     import { goto } from "$app/navigation";
     import "../../lib/styles/global.css";
     import "../../lib/styles/header.css";
 
+    let searchQuery = "";
+    let currentSearchQuery = "";
+
+    onMount(() => {
+        // Load value from local storage.
+        currentSearchQuery = localStorage.getItem("currentSearchQuery") || "";
+    });
+    
     async function handleLogout() {
         try {
             await fetch("/api/auth/logout", { method: "POST" });
@@ -14,15 +23,19 @@
     }
 
     function handleGoHome() {
+        localStorage.setItem("currentSearchQuery", "");
         window.location.href = "/homepage";
     }
 
     function handleSearch() {
-        const searchQuery = document.getElementById("search-bar").value;
+        searchQuery = document.getElementById("search-bar").value;
+
+        localStorage.setItem("currentSearchQuery", searchQuery);
+
         if (searchQuery === "") {
             return;
         }
-        const currentUrl = window.location.href;
+
         const newUrl = `/searchResult/${searchQuery}`;
 
         window.location.href = newUrl;
@@ -33,7 +46,7 @@
     <button class="logo" on:click={handleGoHome}>Bortify</button>
     <form class="search" on:submit|preventDefault={handleSearch}>
         <div class="search-input">
-            <input type="text" name="search-bar" id="search-bar" placeholder="Search" />
+            <input type="text" name="search-bar" id="search-bar" placeholder="Search" value={currentSearchQuery}/>
             <div class="bottom-border"></div>
         </div>
         <button type="submit">
