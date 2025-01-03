@@ -2,8 +2,8 @@
     import "../../../../lib/styles/searchResult.css";
 
     export let data;
-    let songs = data.songs.tracks.items || [];
-    let pastSearch = data.pastSearch;
+    $: songs = data.songs.tracks.items || [];
+    $: currentSearchQuery = data.currentSearchQuery;
 
     //let loading = false;
     //let nextUrl = songs.tracks.next;
@@ -63,7 +63,9 @@
             <h2>No songs were found (. _ . )</h2>
         {:else}
             <div class="results-info">
-                <h1>Search results for <i id="pastSearch"><u>{pastSearch}</u></i></h1>
+                <h1>
+                    Search results for <i id="currentSearchQuery"><u>{currentSearchQuery}</u></i>
+                </h1>
             </div>
             <div class="song-list">
                 {#each songs as song}
@@ -95,7 +97,9 @@
                             <p><i>{song.album.name}</i></p>
                             <p>
                                 <u>
-                                    {song.artists.map((artist) => artist.name).join(", ")}
+                                    {song.artists
+                                        .map((artist) => artist.name)
+                                        .join(", ")}
                                 </u>
                             </p>
                         </div>

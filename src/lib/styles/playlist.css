@@ -108,11 +108,11 @@ button h2,
     gap: 0.2rem;
 }
 
-b {
+.song-title {
     font-size: 1.25rem;
 }
 
-i {
+.album-name {
     font-size: 1.1rem;
 }
 

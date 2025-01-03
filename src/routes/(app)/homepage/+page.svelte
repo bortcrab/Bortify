@@ -4,6 +4,8 @@
     import "../../../lib/styles/global.css";
     import "../../../lib/styles/homepage.css";
 
+    
+
     export let data;
     $: user = data.user;
     $: playlists = data.playlists || [];

@@ -70,7 +70,7 @@ b {
     font-size: 1.25rem;
 }
 
-i:not(#pastSearch) {
+i:not(#currentSearchQuery) {
     font-size: 1.1rem;
 }
 

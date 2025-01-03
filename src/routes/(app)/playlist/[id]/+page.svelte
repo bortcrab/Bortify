@@ -109,8 +109,8 @@
                             </div>
                         {/if}
                         <div class="song-info">
-                            <p><b>{song.track.name}</b></p>
-                            <p><i>{song.track.album.name}</i></p>
+                            <p><b class="song-title">{song.track.name}</b></p>
+                            <p><i class="album-name">{song.track.album.name}</i></p>
                             <p>
                                 <u>
                                     {song.track.artists.map((artist) => artist.name).join(", ")}

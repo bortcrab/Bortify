@@ -22,7 +22,7 @@ export async function load({ cookies, params }) {
 
         return {
             songs: resultsData,
-            pastSearch: params.searchQuery
+            currentSearchQuery: params.searchQuery
         };
     } catch (error) {
         throw redirect(303, '/homepage');
